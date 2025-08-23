@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Sprite[] rotationSprites;
+    public float _speed;
     private SpriteRenderer _spriteRenderer;
     
     private Rigidbody2D _rigidbody;
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         
         SetAnimation();
         
-        _rigidbody.linearVelocity = _moveInput * 3f;
+        _rigidbody.linearVelocity = _moveInput * _speed;
     }
 
     private void OnMove(InputValue inputValue)
