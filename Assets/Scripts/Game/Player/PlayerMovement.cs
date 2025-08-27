@@ -8,13 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     
     private Rigidbody2D _rigidbody;
-<<<<<<< Updated upstream
     private Vector2 _moveInput; 
     public int _lastDirectionIndex = 0;
-=======
-    private Vector2 _moveInput;  
-    private int _lastDirectionIndex = 0;
->>>>>>> Stashed changes
     private Animator _animator;
     
     private void Awake()
