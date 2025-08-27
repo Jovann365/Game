@@ -15,10 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SinglePlayer.unity
     guid: b0c7e72f1947b4f0baa52b467cafad2e
   m_configObjects:
-<<<<<<< Updated upstream
     com.unity.input.settings: {fileID: 11400000, guid: 68644ed60f17f1f48a7a3f02651fe5c0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 1563ae2ed14694b0186177a548548967, type: 3}
-=======
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 237d75238701c45d8a087c0504b71ce0, type: 3}
->>>>>>> Stashed changes
   m_UseUCBPForAssetBundles: 0
