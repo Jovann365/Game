@@ -6,20 +6,19 @@ using UnityEngine.Windows;
 
 public class Weapon : MonoBehaviour
 {
+    public GameObject Bullet;
 
-    public Transform FirePoint;
+    public PlayerMovement playerMovement;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (UnityEngine.Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
-    void Shoot()
+    private void OnFire()
     {
-
+        GameObject bulletInstance = Instantiate(Bullet, transform.position, Quaternion.identity);
+        bulletInstance.GetComponent<Bullet>().direction = playerMovement._lastDirectionIndex;
     }
+
 }

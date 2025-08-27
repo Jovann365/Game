@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D _rigidbody;
     private Vector2 _moveInput; 
-    private int _lastDirectionIndex = 0;
+    public int _lastDirectionIndex = 0;
     private Animator _animator;
     
     private void Awake()
