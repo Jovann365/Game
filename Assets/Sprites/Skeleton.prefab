@@ -192,7 +192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  animator: {fileID: 0}
+  skeletonHurt: {fileID: 8300000, guid: 43d0253df41c5884e93f8097ae6436dd, type: 3}
+  lives: 2
+  dead: 0
 --- !u!114 &4993915472787240347
 MonoBehaviour:
   m_ObjectHideFlags: 0

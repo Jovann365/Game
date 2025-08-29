@@ -6,15 +6,12 @@ public class Skeleton : MonoBehaviour {
     public float speed = 2f;
     private Rigidbody2D skeleton;
     private SkeletonAwareness skeletonAwareness;
+    [SerializeField] private AudioClip skeletonHurt;
     private Vector2 targetDirection;
     private Animator animator;
     private Collider2D collision;
     public int lives = 2;
     public bool dead = false;
-    public Transform player;
-    public float attackRange = 10f;
-    public bool inRange = false;
-    public float RetrieveDistance = 2f;
 
     private void Awake()
     {
@@ -28,21 +25,8 @@ public class Skeleton : MonoBehaviour {
     {
         if (!dead)
         {
-            if (Vector2.Distance(transform.position, player.position) <= attackRange)
-            {
-                inRange = true;
-
-            }
-            else
-            {
-                inRange = false;
-            }
-            if (inRange)
-            {
-
-
-
-            }
+            UpdateTargetDirection();
+            skeleton.position += targetDirection * speed * Time.deltaTime;
         }
     }
 
@@ -69,6 +53,7 @@ public class Skeleton : MonoBehaviour {
     private void TakeDamage()
     {
         lives--;
+        SoundFX.instance.PlaySoundFXClip(skeletonHurt, transform, 1f);
         animator.SetBool("Hurt",true);
         if (lives == 0)
         {

@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
     public GameObject Bullet;
 
     public PlayerMovement playerMovement;
+    [SerializeField] private AudioClip audioShoot;
+
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class Weapon : MonoBehaviour
     {
         GameObject bulletInstance = Instantiate(Bullet, transform.position, Quaternion.identity);
         bulletInstance.GetComponent<Bullet>().direction = playerMovement._lastDirectionIndex;
+        SoundFX.instance.PlaySoundFXClip(audioShoot, transform, 1f);
     }
 
 }
