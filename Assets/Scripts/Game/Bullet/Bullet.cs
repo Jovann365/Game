@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     private PlayerMovement playerMovement;
     private int Timer = 0;
-
     public int direction;
 
     void Start()
@@ -36,7 +35,6 @@ public class Bullet : MonoBehaviour
         
         if (collision.GetComponent<Skeleton>())
         {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
@@ -44,7 +42,7 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         Timer++;
-        if (Timer > 200)
+        if (Timer > 80)
         {
             Destroy(gameObject);
         }
