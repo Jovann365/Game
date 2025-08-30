@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1633073410270794961}
   - component: {fileID: 7484003251870965923}
   - component: {fileID: 7308794317487274197}
-  - component: {fileID: 4993915472787240347}
   - component: {fileID: 8383960548850954172}
   m_Layer: 0
   m_Name: Skeleton
@@ -192,19 +191,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  animator: {fileID: 0}
---- !u!114 &4993915472787240347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7929984604193979927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271276340979b8d4ea2af8563b30bc26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  skeletonHurt: {fileID: 8300000, guid: 43d0253df41c5884e93f8097ae6436dd, type: 3}
+  skeletonAttack: {fileID: 8300000, guid: 8685f3be4ba29e343bb17697a01916e1, type: 3}
+  lives: 2
+  dead: 0
+  attackRange: 3
 --- !u!111 &8383960548850954172
 Animation:
   m_ObjectHideFlags: 0
