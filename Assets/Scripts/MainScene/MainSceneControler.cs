@@ -7,4 +7,9 @@ public class MainSceneControler : MonoBehaviour
     {
         SceneManager.LoadScene("SinglePlayer");
     }
+
+    public void OnMultiPlayerClick()
+    {
+        SceneManager.LoadScene("MultiPlayer");
+    }
 }

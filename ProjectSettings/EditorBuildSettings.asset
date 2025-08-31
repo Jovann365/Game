@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlayer.unity
     guid: b0c7e72f1947b4f0baa52b467cafad2e
+  - enabled: 1
+    path: Assets/Scenes/MultiPlayer.unity
+    guid: e0bef2ddd1a314b2ba1ce7796501d9e3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 42bf7ff5da03244c4bdb3828027acd9e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 68644ed60f17f1f48a7a3f02651fe5c0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 1563ae2ed14694b0186177a548548967, type: 3}
