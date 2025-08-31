@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 3181722273
     locked: 0
+  - name: Collision
+    uniqueID: 1449623683
+    locked: 0
   - name: Player
     uniqueID: 898999037
     locked: 0

@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.89, y: 0.1, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 898999037
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -7219542275010057529, guid: ab0712ae59435be4f8bd1dfebe921d2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -190,12 +190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572f852b91be5a64ebd20254aecc22a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  skeletonHurt: {fileID: 8300000, guid: 43d0253df41c5884e93f8097ae6436dd, type: 3}
-  skeletonAttack: {fileID: 8300000, guid: 8685f3be4ba29e343bb17697a01916e1, type: 3}
-  lives: 2
-  dead: 0
-  attackRange: 3
+  movementSpeed: 2
+  player: {fileID: 0}
+  stopDistance: 0.5
+  attackDistance: 2
+  attackSound: {fileID: 8300000, guid: 8685f3be4ba29e343bb17697a01916e1, type: 3}
+  animator: {fileID: 854102506416987290}
 --- !u!111 &8383960548850954172
 Animation:
   m_ObjectHideFlags: 0

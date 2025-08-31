@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {   
         Skeleton skeleton = collision.GetComponent<Skeleton>();
-        if (collision.gameObject.name.StartsWith("Skeleton") && !skeleton.dead)
+        if (collision.gameObject.name.StartsWith("Skeleton"))
         {
             health--;
             if (health <= 0 && flag==false)

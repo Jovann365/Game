@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] rotationSprites;
     public float _speed;
     private SpriteRenderer _spriteRenderer;
+    public Health health;
     
     private Rigidbody2D _rigidbody;
     private Vector2 _moveInput; 
@@ -17,30 +19,36 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
+        
     }
 
     private void FixedUpdate()
     {
-        if (_moveInput != Vector2.zero)
-        { 
-            if (Mathf.Abs(_moveInput.x) > Mathf.Abs(_moveInput.y))
-            {
-                _lastDirectionIndex = _moveInput.x > 0 ? 3 : 1; 
-            }
-            else
-            {
-                _lastDirectionIndex = _moveInput.y > 0 ? 2 : 0; 
-            }
-        }
-        
-        if (rotationSprites != null && rotationSprites.Length >= 4)
+        if (health.health > 0)
         {
-            _spriteRenderer.sprite = rotationSprites[_lastDirectionIndex];
+
+            if (_moveInput != Vector2.zero)
+            {
+                if (Mathf.Abs(_moveInput.x) > Mathf.Abs(_moveInput.y))
+                {
+                    _lastDirectionIndex = _moveInput.x > 0 ? 3 : 1;
+                }
+                else
+                {
+                    _lastDirectionIndex = _moveInput.y > 0 ? 2 : 0;
+                }
+            }
+
+            if (rotationSprites != null && rotationSprites.Length >= 4)
+            {
+                _spriteRenderer.sprite = rotationSprites[_lastDirectionIndex];
+            }
+
+            SetAnimation();
+
+            _rigidbody.linearVelocity = _moveInput * _speed;
         }
-        
-        SetAnimation();
-        
-        _rigidbody.linearVelocity = _moveInput * _speed;
     }
 
     private void OnMove(InputValue inputValue)
@@ -63,6 +71,14 @@ public class PlayerMovement : MonoBehaviour
             else if (_lastDirectionIndex == 1) _animator.SetBool("movingLeft", true);
             else if (_lastDirectionIndex == 2) _animator.SetBool("movingUp", true);
             else if (_lastDirectionIndex == 3) _animator.SetBool("movingRight", true);
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Walls")
+        {
+            _rigidbody.linearVelocity = Vector2.zero;
         }
     }
 }
