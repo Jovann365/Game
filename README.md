@@ -1,1 +1,1 @@
-# Game for Visual Programming
+# Skeleton Rush - Visual Programming
